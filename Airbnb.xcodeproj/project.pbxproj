@@ -28,6 +28,7 @@
 		0E7275382BC5401B00B1778D /* SearchBarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7275372BC5401B00B1778D /* SearchBarCustom.swift */; };
 		0E72753A2BC5467200B1778D /* ExploreFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7275392BC5467200B1778D /* ExploreFilterView.swift */; };
 		0E72753C2BC5900200B1778D /* BubbleArrayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72753B2BC5900200B1778D /* BubbleArrayList.swift */; };
+		0E72753E2BC6800D00B1778D /* PropertyTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72753D2BC6800D00B1778D /* PropertyTypeLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		0E7275372BC5401B00B1778D /* SearchBarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCustom.swift; sourceTree = "<group>"; };
 		0E7275392BC5467200B1778D /* ExploreFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFilterView.swift; sourceTree = "<group>"; };
 		0E72753B2BC5900200B1778D /* BubbleArrayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleArrayList.swift; sourceTree = "<group>"; };
+		0E72753D2BC6800D00B1778D /* PropertyTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyTypeLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				0E4ED2C62BC001B300C34A8F /* ButtonLabelCustom.swift */,
 				0E7275372BC5401B00B1778D /* SearchBarCustom.swift */,
 				0E72753B2BC5900200B1778D /* BubbleArrayList.swift */,
+				0E72753D2BC6800D00B1778D /* PropertyTypeLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				0E7275382BC5401B00B1778D /* SearchBarCustom.swift in Sources */,
 				0E4ED2922BBEFA1100C34A8F /* TabBarView.swift in Sources */,
 				0E72753C2BC5900200B1778D /* BubbleArrayList.swift in Sources */,
+				0E72753E2BC6800D00B1778D /* PropertyTypeLabel.swift in Sources */,
 				0E4ED2CC2BC04F3300C34A8F /* TextAuthentificationForm.swift in Sources */,
 				0E4ED2902BBEFA1100C34A8F /* AirbnbApp.swift in Sources */,
 				0E4ED2C72BC001B300C34A8F /* ButtonLabelCustom.swift in Sources */,

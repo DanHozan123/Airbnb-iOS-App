@@ -27,9 +27,9 @@ struct BubbleArrayList: View {
                             .padding(.vertical, 10)
                             .foregroundColor(selectedBubble == data ? .white : .black)
                             .background(selectedBubble == data ? .black : .white)
-                            .cornerRadius(15)
+                            .cornerRadius(20)
                             .overlay {
-                                RoundedRectangle(cornerRadius: 15)
+                                RoundedRectangle(cornerRadius: 20)
                                     .stroke(Color.gray, lineWidth: 1)
                             }
                     }
