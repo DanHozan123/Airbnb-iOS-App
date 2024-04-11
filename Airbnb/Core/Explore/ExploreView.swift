@@ -12,9 +12,21 @@ struct ExploreView: View {
     @State var searchText = ""
     @State var showFilterView = false
     
+    @State var optionPropertyMenu: [OptionPropertyMenu] = {
+        var options: [OptionPropertyMenu] = []
+        for category in PropertyTypesCategory.allCases {
+            options.append(OptionPropertyMenu(propertyTypesCategory: category))
+        }
+        return options
+    }()
+    
     var body: some View {
         VStack {
+            
             SearchBarCustom(searchText: $searchText, showFilterView: $showFilterView)
+            
+            PropertyTypesMenu(optionPropertyMenu: $optionPropertyMenu).padding()
+            
             Spacer()
             
         }

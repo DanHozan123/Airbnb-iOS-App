@@ -9,71 +9,49 @@ import SwiftUI
 
 struct PropertyTypeLabel: View {
     
-    var firstImage: String
-    var secondImage: String
-    @Binding var selectedFirst: Bool
-    @Binding var selectedSecond: Bool
+    let image: String
+    let name: String
+    @Binding var selected: Bool
+    
     
     var body: some View {
         VStack() {
             HStack {
-                
-                VStack(alignment: .leading) {
-                    Image(systemName: firstImage)
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .padding(10)
+                Button {
+                    selected.toggle()
+                } label: {
+                    
+                    VStack(alignment: .leading) {
+                        Image(systemName: image)
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .padding(10)
                         
-                    Spacer()
-                    
-                    Text("House")
-                        .font(.footnote)
-                        .fontWeight(.medium)
-                        .padding(10)
-                       
+                        Spacer()
                         
+                        Text(name)
+                            .font(.footnote)
+                            .fontWeight(.medium)
+                            .padding(10)
+                        
+                        
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(height: 90)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(selected ? .black : Color.gray, lineWidth: 1)
+                    }
+                    .background(selected ? Color.gray.opacity(0.1) : .white)
+                    .tint(.black)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .frame(height: 90)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.gray, lineWidth: 1)
-                }
-                
-                
-                VStack(alignment: .leading) {
-                    Image(systemName: secondImage)
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .padding(10)
-                    
-                    Spacer()
-                    
-                    Text("Apartment")
-                        .font(.footnote)
-                        .fontWeight(.medium)
-                        .padding(10)
-                       
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .frame(height: 90)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.gray, lineWidth: 1)
-                }
-                
-             
             }
-           
-         
         }
-  
-        
     }
 }
 
 struct PropertyTypeLabel_Previews: PreviewProvider {
     static var previews: some View {
-        PropertyTypeLabel(firstImage: "house", secondImage: "building.2", selectedFirst: .constant(false), selectedSecond: .constant(false))
+        PropertyTypeLabel(image: "house", name: "House", selected: .constant(false))
     }
 }

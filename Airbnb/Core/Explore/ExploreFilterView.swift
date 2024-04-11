@@ -24,6 +24,11 @@ enum TypeOfPlace {
     }
 }
 
+struct Option: Equatable, Hashable{
+    let title: String
+    var checkbox = false
+}
+
 struct ExploreFilterView: View {
     
     @Binding var showFilterView: Bool
@@ -35,10 +40,67 @@ struct ExploreFilterView: View {
     @State var selectedBubbleBeds = "Any"
     @State var selectedBubbleBathrooms = "Any"
     @State var guestFavourites = false
+    @State var selectedHouse = false
+    @State var selectedApartment = false
+    @State var selectedGuesthouse = false
+    @State var selectedHotel = false
+        
+    @State var essentials: [Option] = {
+        var options: [Option] = []
+        for option in AmenityOption.allCases {
+            options.append(Option(title: option.rawValue))
+        }
+        return options
+    }()
+    
+    @State var features: [Option] = {
+        var options: [Option] = []
+        for option in FeatureOption.allCases {
+            options.append(Option(title: option.rawValue))
+        }
+        return options
+    }()
+    
+    @State var location = [Option(title: LocationOption.beachfront.rawValue),
+                           Option(title: LocationOption.waterfront.rawValue)]
+    
+    @State var safety = [Option(title: SafetyOption.smokeAlarm.rawValue),
+                         Option(title: SafetyOption.carbonMonoxideAlarm.rawValue)]
+    
+    @State var instantBook = false
+    @State var selfCheckIn = false
+    @State var allowsPets = false
+    
+    @State var guestEntrance = [Option(title: GuestEntranceOption.stepFreeAccess.rawValue),
+                                Option(title: GuestEntranceOption.widerEntrance.rawValue),
+                                Option(title: GuestEntranceOption.stepFreePath.rawValue),
+                                Option(title: GuestEntranceOption.accessibleParking.rawValue)]
+    
+    @State var bedroom = [Option(title: BedroomOption.stepFreeAccess.rawValue),
+                          Option(title: BedroomOption.widerEntrance.rawValue)]
+    
+    @State var bathroom: [Option] = {
+        var options: [Option] = []
+        for option in BathroomOption.allCases {
+            options.append(Option(title: option.rawValue))
+        }
+        return options
+    }()
+    @State var addaptiveEquipment = [Option(title: AdaptiveEquipmentOption.ceilingOrMobileHoist.rawValue)]
+    
+    @State var hostLanguage: [Option] = {
+        var options: [Option] = []
+        for option in HostLanguageOption.allCases {
+            options.append(Option(title: option.rawValue))
+        }
+        return options
+    }()
     
     var body: some View {
         NavigationView {
             ScrollView {
+                
+                //property types
                 VStack() {
                     
                     VStack {
@@ -48,7 +110,7 @@ struct ExploreFilterView: View {
                                 .padding(.bottom, 5)
                             
                             Text("Search rooms, entire homes, or any type of place")
-                                .font(.footnote)
+                                .font(.subheadline)
                                 .foregroundColor(.gray)
                             
                         }
@@ -108,7 +170,7 @@ struct ExploreFilterView: View {
                             .padding(.bottom, 5)
                         
                         Text("Nighly prices including fees and taxes")
-                            .font(.footnote)
+                            .font(.subheadline)
                             .foregroundColor(.gray)
                         
                         HStack() {
@@ -174,23 +236,29 @@ struct ExploreFilterView: View {
                                     .renderingMode(.template)
                                     .resizable()
                                     .frame(width: 30, height: 30)
-                                    .padding(5)
+                                    .padding(.top, 8)
+                                    .padding(.leading, 8)
+                                
+                                Spacer()
                                 
                                 Text("Guest favourites")
                                     .fontWeight(.medium)
+                                    .padding(.leading, 5)
                                     .padding(.bottom, 3)
-                                    .padding(.leading, 5)
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                    
-                                                                
+                                
+                                
                                 Text("The most loved homes on Airbnb, according to guests")
-                                    .font(.footnote)
-                                    .foregroundColor(.gray)
-                                    .padding(.leading, 5)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-
+                                    .font(.subheadline)
+                                       .foregroundColor(.gray)
+                                       .padding(.leading, 5)
+                                       .padding(.bottom, 5)
+                                       .multilineTextAlignment(.leading)
+                                       .frame(maxWidth: .infinity, alignment: .leading)
+                                    
+                                
                             }
-                            .frame(height: 110)
+                            .frame(height: 130)
                             .overlay {
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(guestFavourites ? Color.black : Color.gray, lineWidth: 1)
@@ -208,36 +276,138 @@ struct ExploreFilterView: View {
                             .fontWeight(.medium)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        PropertyTypeLabel(firstImage: "house", secondImage: "building.2")
-                        PropertyTypeLabel(firstImage: "house.lodge", secondImage: "building.columns")
+                        HStack {
+                            PropertyTypeLabel(image: "house", name: "House", selected: $selectedHouse)
+                            PropertyTypeLabel(image: "building.2", name: "Apartment", selected: $selectedApartment)
+                        }
+                        HStack {
+                            PropertyTypeLabel(image: "house.lodge", name: "Guesthouse", selected: $selectedGuesthouse)
+                            PropertyTypeLabel(image: "building.columns", name: "Hotel", selected: $selectedHotel)
+                        }
                         
                     }
                     .padding(.vertical)
                     
-                    Spacer()
-                    
-                    
-                    
-                    
+                    Divider()
                     
                 }
-                .padding(.horizontal)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            showFilterView.toggle()
-                        } label: {
-                            Image(systemName: "x.circle.fill")
-                                .foregroundColor(.black)
+                
+                //property options
+                VStack() {
+                    
+                    VStack{
+                        OptionsList(title: "Essentials", options: $essentials)
+                            .padding(.bottom, 15)
+                        OptionsList(title: "Features", options: $features)
+                            .padding(.bottom, 15)
+                        
+                        Text("Location")
+                            .fontWeight(.medium)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        ForEach(location, id: \.self) { option in
+                            CheckboxShape(option: $location[location.firstIndex(of: option)!])
+                        }
+                        .padding(.bottom, 15)
+                        
+                        
+                        Text("Safety")
+                            .fontWeight(.medium)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        ForEach(safety, id: \.self) { option in
+                            CheckboxShape(option: $safety[safety.firstIndex(of: option)!])
                         }
                     }
+                    .padding(.vertical)
+                    
+                    Divider()
+                    
+                    VStack() {
+                        Text("Booking options")
+                            .fontWeight(.medium)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        BookingOption(bookingOptionIsOn: $instantBook, title: "Instant Book", subheadline: "Book without waiting for the host to to respond")
+                            .padding(.bottom, 15)
+                        
+                        BookingOption(bookingOptionIsOn: $selfCheckIn, title: "Self check-in", subheadline: "Easy access to the property once you arrive")
+                            .padding(.bottom, 15)
+                        
+                        BookingOption(bookingOptionIsOn: $allowsPets, title: "Allows pets", subheadline: "Bringing a service animal")
+                    }
+                    .padding(.vertical)
+                    
+                    Divider()
+                    
+                    VStack() {
+                        Text("Accessibility features")
+                            .fontWeight(.medium)
+                            .padding(.bottom, 3)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Text("This info was provided by the Host and reviewed by Airbnb.")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .padding(.vertical)
+                    
+                    VStack {
+                        OptionsList(title: "Guest entrance and parking", options: $guestEntrance)
+                            .padding(.bottom, 15)
+                        
+                        Text("Bedroom")
+                            .fontWeight(.medium)
+                            .padding(.bottom, 3)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        ForEach(bedroom, id: \.self) { option in
+                            CheckboxShape(option: $bedroom[bedroom.firstIndex(of: option)!])
+                        }
+                        .padding(.bottom, 15)
+                        
+                        
+                        OptionsList(title: "Bathroom", options: $bathroom)
+                            .padding(.bottom, 15)
+                        
+                        Text("Adaptive equipment")
+                            .fontWeight(.medium)
+                            .padding(.bottom, 3)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        ForEach(addaptiveEquipment, id: \.self) { option in
+                            CheckboxShape(option: $addaptiveEquipment[addaptiveEquipment.firstIndex(of: option)!])
+                        }
+                        .padding(.bottom, 15)
+
+                    }
+                    
+                    Divider()
+                    
+                    OptionsList(title: "Host Language", options: $hostLanguage)
+                        .padding(.bottom, 15)
                 }
-                .navigationTitle("Filters")
-                .navigationBarTitleDisplayMode(.inline)
+                
+                
+                
             }
+            .padding(.horizontal)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        showFilterView.toggle()
+                    } label: {
+                        Image(systemName: "x.circle.fill")
+                            .foregroundColor(.black)
+                    }
+                }
+            }
+            .navigationTitle("Filters")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
+
+
 
 struct ExploreFilterView_Previews: PreviewProvider {
     static var previews: some View {

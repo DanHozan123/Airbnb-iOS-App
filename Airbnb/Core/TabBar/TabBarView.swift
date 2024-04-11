@@ -18,7 +18,6 @@ struct TabBarView: View {
                     .tabItem {
                         Image(systemName: "magnifyingglass")
                         Text("Explore")
-                        
                     }
                 
                 WishlistsView()
@@ -29,7 +28,6 @@ struct TabBarView: View {
                 
                 TripsView()
                     .tabItem {
-                        
                         Image(systemName: "list.star")
                         Text("Trips")
                     }
