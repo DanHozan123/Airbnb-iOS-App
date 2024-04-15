@@ -37,7 +37,7 @@ struct TabBarView: View {
                         Text("Inbox")
                     }
                 
-                ProfileView()
+                ProfileView(user: MOCK_DATA_USER)
                     .tabItem {
                         Image(systemName: "person.crop.circle.fill")
                         Text("Profile")

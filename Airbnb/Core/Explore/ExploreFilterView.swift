@@ -101,7 +101,7 @@ struct ExploreFilterView: View {
             ScrollView {
                 
                 //property types
-                VStack() {
+                VStack(alignment: .leading) {
                     
                     VStack {
                         VStack(alignment: .leading) {
@@ -114,7 +114,6 @@ struct ExploreFilterView: View {
                                 .foregroundColor(.gray)
                             
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 10)
                         
                         HStack(spacing: 0) {
@@ -205,32 +204,26 @@ struct ExploreFilterView: View {
                     Divider()
                         .background(.gray)
                     
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text("Bedrooms")
-                            .fontWeight(.medium)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                         BubbleArrayList(selectedBubble: $selectedBubbleBedrooms)
                         
                         Text("Beds")
-                            .fontWeight(.medium)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                         BubbleArrayList(selectedBubble: $selectedBubbleBeds)
                         
                         Text("Bathrooms")
-                            .fontWeight(.medium)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                         BubbleArrayList(selectedBubble: $selectedBubbleBathrooms)
                     }
                     .padding(.vertical)
+                    .fontWeight(.medium)
                     
                     Divider()
                         .background(.gray)
                     
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text("Top-tier stays")
                             .fontWeight(.medium)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
+                                                
                         Button {
                             guestFavourites.toggle()
                         } label: {
@@ -248,7 +241,6 @@ struct ExploreFilterView: View {
                                     .fontWeight(.medium)
                                     .padding(.leading, 5)
                                     .padding(.bottom, 3)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
                                 
                                 
                                 Text("The most loved homes on Airbnb, according to guests")
@@ -275,11 +267,9 @@ struct ExploreFilterView: View {
                     Divider()
                         .background(.gray)
                     
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text("Property type")
                             .fontWeight(.medium)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
                         HStack {
                             PropertyTypeLabel(image: "house", name: "House", selected: $selectedHouse)
                             PropertyTypeLabel(image: "building.2", name: "Apartment", selected: $selectedApartment)
@@ -300,7 +290,7 @@ struct ExploreFilterView: View {
                 //property options
                 VStack() {
                     
-                    VStack{
+                    VStack(alignment: .leading) {
                         OptionsList(title: "Essentials", options: $essentials)
                             .padding(.bottom, 15)
                         OptionsList(title: "Features", options: $features)
@@ -308,7 +298,6 @@ struct ExploreFilterView: View {
                         
                         Text("Location")
                             .fontWeight(.medium)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                         
                         ForEach(location, id: \.self) { option in
                             CheckboxShape(option: $location[location.firstIndex(of: option)!])
@@ -318,7 +307,6 @@ struct ExploreFilterView: View {
                         
                         Text("Safety")
                             .fontWeight(.medium)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                         
                         ForEach(safety, id: \.self) { option in
                             CheckboxShape(option: $safety[safety.firstIndex(of: option)!])
@@ -329,10 +317,9 @@ struct ExploreFilterView: View {
                     Divider()
                         .background(.gray)
                     
-                    VStack() {
+                    VStack(alignment: .leading) {
                         Text("Booking options")
                             .fontWeight(.medium)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                         
                         BookingOption(bookingOptionIsOn: $instantBook, title: "Instant Book", subheadline: "Book without waiting for the host to to respond")
                             .padding(.bottom, 15)
@@ -347,27 +334,27 @@ struct ExploreFilterView: View {
                     Divider()
                         .background(.gray)
                     
-                    VStack() {
+                    VStack(alignment: .leading) {
                         Text("Accessibility features")
                             .fontWeight(.medium)
                             .padding(.bottom, 3)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Text("This info was provided by the Host and reviewed by Airbnb.")
                             .font(.subheadline)
                             .foregroundColor(.gray)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            
                     }
                     .padding(.vertical)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    VStack {
+                    VStack(alignment: .leading) {
                         OptionsList(title: "Guest entrance and parking", options: $guestEntrance)
                             .padding(.bottom, 15)
                         
                         Text("Bedroom")
                             .fontWeight(.medium)
                             .padding(.bottom, 3)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
                         ForEach(bedroom, id: \.self) { option in
                             CheckboxShape(option: $bedroom[bedroom.firstIndex(of: option)!])
                         }
@@ -380,7 +367,6 @@ struct ExploreFilterView: View {
                         Text("Adaptive equipment")
                             .fontWeight(.medium)
                             .padding(.bottom, 3)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                         ForEach(addaptiveEquipment, id: \.self) { option in
                             CheckboxShape(option: $addaptiveEquipment[addaptiveEquipment.firstIndex(of: option)!])
                         }

@@ -24,10 +24,11 @@ struct ImagesSwiperWithCounter: View {
                         .frame(width: width, height: width)
                         .clipped()
                         .opacity(index == currentIndex ? 1 : 0)
+                        .frame(height: UIScreen.main.bounds.width / 1.3)
+                        .clipped()
                 }
                 
-             
-                    Text(" \(currentIndex + 1) / \(imageNames.count) ")
+                Text(" \(currentIndex + 1) / \(imageNames.count) ")
                     .foregroundColor(.white)
                     .font(.subheadline)
                     .fontWeight(.medium)
@@ -36,9 +37,9 @@ struct ImagesSwiperWithCounter: View {
                     .background(GRAY_CUSTOM4.opacity(0.8))
                     .cornerRadius(3)
                     .padding()
-          
+                
             }
-           
+            
         }
         .gesture(
             DragGesture()

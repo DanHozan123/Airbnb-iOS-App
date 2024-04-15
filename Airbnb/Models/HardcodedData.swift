@@ -189,3 +189,127 @@ enum PropertyTypesCategory: String, CaseIterable {
         }
     }
 }
+
+enum SettingsItems: String {
+    case settings = "Settings"
+    case accessibility = "Accessibility"
+    case getHelp = "Get Help"
+    case thirdPartyTools = "Third-party Tools"
+    
+    var imageName: String {
+        switch self {
+            case .settings:
+                return "gear"
+            case .accessibility:
+                return "doc.badge.gearshape.fill"
+            case .getHelp:
+                return "questionmark.circle"
+            case .thirdPartyTools:
+                return "key.viewfinder"
+        }
+    }
+}
+
+enum SettingsItems2: String {
+    case personalInformation = "Personal Information"
+    case payments = "Payments And payouts"
+    case taxes = "Taxes"
+    case loginAndSecuity = "Login & seurity"
+    case accessibility = "Accessibility"
+    case translation = "Translation"
+    case notifications = "Notifications"
+    case privacy = "Privacy and sharing"
+    
+    var imageName: String {
+        switch self {
+            
+        case .personalInformation:
+            return "person.circle"
+        case .payments:
+            return "creditcard.fill"
+        case .taxes:
+            return "doc"
+        case .loginAndSecuity:
+            return "shield"
+        case .accessibility:
+            return "doc.badge.gearshape.fill"
+        case .translation:
+            return "character.book.closed"
+        case .notifications:
+            return "bell"
+        case .privacy:
+            return "lock"
+        }
+    }
+    
+}
+
+enum HostingItems: String {
+    case switchToHosting = "Swith to hosting"
+    case listYourSpace = "List your space"
+    case guideBook = "Your guidebook"
+    
+    var imageName: String {
+        switch self {
+            
+        case .switchToHosting:
+            return "lightswitch.on"
+        case .listYourSpace:
+            return "house"
+        case .guideBook:
+            return "book.closed"
+        }
+    }
+}
+
+enum ToolsItems: String {
+    case siri = "Siri settings"
+    
+    var imageName: String {
+        switch self {
+        case .siri:
+            return "circle.circle"
+        }
+    }
+}
+
+enum SupportItems: String {
+    case helpCentre = "Visit the Help Centre"
+    case safetyIssue = "Get help with a safety issue"
+    case report = "Report a neighbourhood concern"
+    case howAirbnbWorks = "How Airbnb works"
+    case feedback = "Give us feedback"
+    
+    var imageName: String {
+        switch self {
+            
+        case .helpCentre:
+            return "questionmark.circle"
+        case .safetyIssue:
+            return "lock.shield.fill"
+        case .report:
+            return "exclamationmark.bubble"
+        case .howAirbnbWorks:
+            return "gearshape.2"
+        case .feedback:
+            return "pencil"
+        }
+    }
+}
+
+enum LegalItems: String {
+    case termsOfService = "Terms of Serice"
+    case privacyPolicy = "Privacy Policy"
+    case licences = "Open sources licences"
+    
+    var imageName: String {
+        switch self {
+        case .termsOfService:
+            return "book"
+        case .privacyPolicy:
+            return "book"
+        case .licences:
+            return "book"
+        }
+    }
+}

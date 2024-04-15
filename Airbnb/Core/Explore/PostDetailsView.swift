@@ -20,8 +20,6 @@ struct PostDetailsView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 ImagesSwiperWithCounter(imageNames: post.images)
-                    .frame(height: UIScreen.main.bounds.width / 1.3)
-                    .clipped()
                 
                 VStack{
                     Text(post.name)

@@ -48,6 +48,31 @@
 		0E7800CF2BC96E3C007130E5 /* LoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7800CE2BC96E3C007130E5 /* LoveButton.swift */; };
 		0E7800D12BC97217007130E5 /* RatingCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7800D02BC97217007130E5 /* RatingCounter.swift */; };
 		0E7800D32BC98131007130E5 /* ImagesSwiperWithCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7800D22BC98131007130E5 /* ImagesSwiperWithCounter.swift */; };
+		0E7BF1162BCD2B76009379B6 /* PersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1152BCD2B76009379B6 /* PersonalInformationView.swift */; };
+		0E7BF1182BCD2B97009379B6 /* PaymentsAndPayoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1172BCD2B97009379B6 /* PaymentsAndPayoutsView.swift */; };
+		0E7BF11A2BCD2BA6009379B6 /* TaxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1192BCD2BA6009379B6 /* TaxesView.swift */; };
+		0E7BF11C2BCD2BB8009379B6 /* LoginAndSecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF11B2BCD2BB8009379B6 /* LoginAndSecurityView.swift */; };
+		0E7BF11E2BCD2BCC009379B6 /* AccessibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF11D2BCD2BCC009379B6 /* AccessibilityView.swift */; };
+		0E7BF1202BCD2BDA009379B6 /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF11F2BCD2BDA009379B6 /* TranslationView.swift */; };
+		0E7BF1222BCD2BE9009379B6 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1212BCD2BE9009379B6 /* NotificationsView.swift */; };
+		0E7BF1242BCD2C03009379B6 /* PrivacyAndSharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1232BCD2C03009379B6 /* PrivacyAndSharingView.swift */; };
+		0E7BF1262BCD2C1F009379B6 /* SwitchToHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1252BCD2C1F009379B6 /* SwitchToHostingView.swift */; };
+		0E7BF1282BCD2C54009379B6 /* ListYourSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1272BCD2C54009379B6 /* ListYourSpaceView.swift */; };
+		0E7BF12A2BCD2C65009379B6 /* YourGuidebooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1292BCD2C65009379B6 /* YourGuidebooksView.swift */; };
+		0E7BF12C2BCD2C7A009379B6 /* SiriSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF12B2BCD2C7A009379B6 /* SiriSettingsView.swift */; };
+		0E7BF12E2BCD2C9A009379B6 /* HowAirbnbWorksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF12D2BCD2C9A009379B6 /* HowAirbnbWorksView.swift */; };
+		0E7BF1302BCD2CB3009379B6 /* SafetyIssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF12F2BCD2CB3009379B6 /* SafetyIssueView.swift */; };
+		0E7BF1322BCD2CC1009379B6 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1312BCD2CC1009379B6 /* ReportView.swift */; };
+		0E7BF1342BCD2CE1009379B6 /* GetHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1332BCD2CE1009379B6 /* GetHelpView.swift */; };
+		0E7BF1362BCD2CF3009379B6 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1352BCD2CF3009379B6 /* FeedbackView.swift */; };
+		0E7BF1382BCD2D08009379B6 /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1372BCD2D08009379B6 /* TermsOfServiceView.swift */; };
+		0E7BF13A2BCD2D1B009379B6 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1392BCD2D1B009379B6 /* PrivacyPolicyView.swift */; };
+		0E7BF13C2BCD2D8C009379B6 /* OpenSourceLicencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF13B2BCD2D8C009379B6 /* OpenSourceLicencesView.swift */; };
+		0E7BF1442BCD3152009379B6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1432BCD3152009379B6 /* SettingsView.swift */; };
+		0E7BF1462BCD316A009379B6 /* ThirdPartyToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1452BCD316A009379B6 /* ThirdPartyToolsView.swift */; };
+		0E7BF1482BCD53C0009379B6 /* ShowProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1472BCD53C0009379B6 /* ShowProfileView.swift */; };
+		0E7BF14A2BCD53DC009379B6 /* AirbnbYourPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF1492BCD53DC009379B6 /* AirbnbYourPlaceView.swift */; };
+		0E7BF14C2BCD7169009379B6 /* HelpCentreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF14B2BCD7169009379B6 /* HelpCentreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +137,31 @@
 		0E7800CE2BC96E3C007130E5 /* LoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveButton.swift; sourceTree = "<group>"; };
 		0E7800D02BC97217007130E5 /* RatingCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCounter.swift; sourceTree = "<group>"; };
 		0E7800D22BC98131007130E5 /* ImagesSwiperWithCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesSwiperWithCounter.swift; sourceTree = "<group>"; };
+		0E7BF1152BCD2B76009379B6 /* PersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationView.swift; sourceTree = "<group>"; };
+		0E7BF1172BCD2B97009379B6 /* PaymentsAndPayoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsAndPayoutsView.swift; sourceTree = "<group>"; };
+		0E7BF1192BCD2BA6009379B6 /* TaxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxesView.swift; sourceTree = "<group>"; };
+		0E7BF11B2BCD2BB8009379B6 /* LoginAndSecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSecurityView.swift; sourceTree = "<group>"; };
+		0E7BF11D2BCD2BCC009379B6 /* AccessibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityView.swift; sourceTree = "<group>"; };
+		0E7BF11F2BCD2BDA009379B6 /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
+		0E7BF1212BCD2BE9009379B6 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		0E7BF1232BCD2C03009379B6 /* PrivacyAndSharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAndSharingView.swift; sourceTree = "<group>"; };
+		0E7BF1252BCD2C1F009379B6 /* SwitchToHostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToHostingView.swift; sourceTree = "<group>"; };
+		0E7BF1272BCD2C54009379B6 /* ListYourSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListYourSpaceView.swift; sourceTree = "<group>"; };
+		0E7BF1292BCD2C65009379B6 /* YourGuidebooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourGuidebooksView.swift; sourceTree = "<group>"; };
+		0E7BF12B2BCD2C7A009379B6 /* SiriSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriSettingsView.swift; sourceTree = "<group>"; };
+		0E7BF12D2BCD2C9A009379B6 /* HowAirbnbWorksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowAirbnbWorksView.swift; sourceTree = "<group>"; };
+		0E7BF12F2BCD2CB3009379B6 /* SafetyIssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyIssueView.swift; sourceTree = "<group>"; };
+		0E7BF1312BCD2CC1009379B6 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		0E7BF1332BCD2CE1009379B6 /* GetHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHelpView.swift; sourceTree = "<group>"; };
+		0E7BF1352BCD2CF3009379B6 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		0E7BF1372BCD2D08009379B6 /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
+		0E7BF1392BCD2D1B009379B6 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		0E7BF13B2BCD2D8C009379B6 /* OpenSourceLicencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceLicencesView.swift; sourceTree = "<group>"; };
+		0E7BF1432BCD3152009379B6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0E7BF1452BCD316A009379B6 /* ThirdPartyToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyToolsView.swift; sourceTree = "<group>"; };
+		0E7BF1472BCD53C0009379B6 /* ShowProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileView.swift; sourceTree = "<group>"; };
+		0E7BF1492BCD53DC009379B6 /* AirbnbYourPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbYourPlaceView.swift; sourceTree = "<group>"; };
+		0E7BF14B2BCD7169009379B6 /* HelpCentreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCentreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,8 +356,11 @@
 			isa = PBXGroup;
 			children = (
 				0E4ED2DF2BC0675200C34A8F /* ProfileView.swift */,
-				0E20FE152BCAA2E600DBAEA2 /* ProfileWithGuestUserView.swift */,
 				0E20FE132BCAA2B900DBAEA2 /* ProfileWithUserView.swift */,
+				0E20FE152BCAA2E600DBAEA2 /* ProfileWithGuestUserView.swift */,
+				0E7BF1472BCD53C0009379B6 /* ShowProfileView.swift */,
+				0E7BF1492BCD53DC009379B6 /* AirbnbYourPlaceView.swift */,
+				0E7BF1142BCD2AD1009379B6 /* ProfileSubviews */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -331,6 +384,84 @@
 				0E7800C62BC936DD007130E5 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0E7BF1142BCD2AD1009379B6 /* ProfileSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF1422BCD3138009379B6 /* SettingsUserNil */,
+				0E7BF13D2BCD2D91009379B6 /* Settings */,
+				0E7BF13E2BCD2DB1009379B6 /* Hosting */,
+				0E7BF13F2BCD2DD3009379B6 /* Tools */,
+				0E7BF1402BCD2DE5009379B6 /* Support */,
+				0E7BF1412BCD2E00009379B6 /* Legal */,
+			);
+			path = ProfileSubviews;
+			sourceTree = "<group>";
+		};
+		0E7BF13D2BCD2D91009379B6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF1152BCD2B76009379B6 /* PersonalInformationView.swift */,
+				0E7BF1172BCD2B97009379B6 /* PaymentsAndPayoutsView.swift */,
+				0E7BF1192BCD2BA6009379B6 /* TaxesView.swift */,
+				0E7BF11B2BCD2BB8009379B6 /* LoginAndSecurityView.swift */,
+				0E7BF11D2BCD2BCC009379B6 /* AccessibilityView.swift */,
+				0E7BF11F2BCD2BDA009379B6 /* TranslationView.swift */,
+				0E7BF1212BCD2BE9009379B6 /* NotificationsView.swift */,
+				0E7BF1232BCD2C03009379B6 /* PrivacyAndSharingView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0E7BF13E2BCD2DB1009379B6 /* Hosting */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF1252BCD2C1F009379B6 /* SwitchToHostingView.swift */,
+				0E7BF1272BCD2C54009379B6 /* ListYourSpaceView.swift */,
+				0E7BF1292BCD2C65009379B6 /* YourGuidebooksView.swift */,
+			);
+			path = Hosting;
+			sourceTree = "<group>";
+		};
+		0E7BF13F2BCD2DD3009379B6 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF12B2BCD2C7A009379B6 /* SiriSettingsView.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		0E7BF1402BCD2DE5009379B6 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF14B2BCD7169009379B6 /* HelpCentreView.swift */,
+				0E7BF12F2BCD2CB3009379B6 /* SafetyIssueView.swift */,
+				0E7BF1312BCD2CC1009379B6 /* ReportView.swift */,
+				0E7BF1332BCD2CE1009379B6 /* GetHelpView.swift */,
+				0E7BF12D2BCD2C9A009379B6 /* HowAirbnbWorksView.swift */,
+				0E7BF1352BCD2CF3009379B6 /* FeedbackView.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		0E7BF1412BCD2E00009379B6 /* Legal */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF1372BCD2D08009379B6 /* TermsOfServiceView.swift */,
+				0E7BF1392BCD2D1B009379B6 /* PrivacyPolicyView.swift */,
+				0E7BF13B2BCD2D8C009379B6 /* OpenSourceLicencesView.swift */,
+			);
+			path = Legal;
+			sourceTree = "<group>";
+		};
+		0E7BF1422BCD3138009379B6 /* SettingsUserNil */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF1432BCD3152009379B6 /* SettingsView.swift */,
+				0E7BF1452BCD316A009379B6 /* ThirdPartyToolsView.swift */,
+			);
+			path = SettingsUserNil;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,31 +595,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E20FE182BCAA4EF00DBAEA2 /* ButtonLabel.swift in Sources */,
+				0E7BF14C2BCD7169009379B6 /* HelpCentreView.swift in Sources */,
 				0E7800CD2BC96B96007130E5 /* PostDetailsView.swift in Sources */,
+				0E7BF1222BCD2BE9009379B6 /* NotificationsView.swift in Sources */,
+				0E7BF1462BCD316A009379B6 /* ThirdPartyToolsView.swift in Sources */,
 				0E4ED2CE2BC055FA00C34A8F /* AddPassword.swift in Sources */,
+				0E7BF12C2BCD2C7A009379B6 /* SiriSettingsView.swift in Sources */,
 				0E20FE1A2BCAA96000DBAEA2 /* Colors.swift in Sources */,
 				0E7800C12BC80321007130E5 /* PropertyTypesMenu.swift in Sources */,
 				0E4ED2E02BC0675200C34A8F /* ProfileView.swift in Sources */,
 				0E20FE142BCAA2B900DBAEA2 /* ProfileWithUserView.swift in Sources */,
 				0E7800C72BC936DD007130E5 /* User.swift in Sources */,
+				0E7BF13A2BCD2D1B009379B6 /* PrivacyPolicyView.swift in Sources */,
+				0E7BF1322BCD2CC1009379B6 /* ReportView.swift in Sources */,
 				0E7800CF2BC96E3C007130E5 /* LoveButton.swift in Sources */,
 				0E7800C52BC93683007130E5 /* Post.swift in Sources */,
 				0E20FE162BCAA2E600DBAEA2 /* ProfileWithGuestUserView.swift in Sources */,
+				0E7BF1202BCD2BDA009379B6 /* TranslationView.swift in Sources */,
 				0E4ED2DE2BC0674700C34A8F /* InboxView.swift in Sources */,
+				0E7BF1302BCD2CB3009379B6 /* SafetyIssueView.swift in Sources */,
+				0E7BF1442BCD3152009379B6 /* SettingsView.swift in Sources */,
 				0E20FE1C2BCAB65600DBAEA2 /* AirbnbYourPlace.swift in Sources */,
 				0E4ED2D82BC066EE00C34A8F /* ExploreView.swift in Sources */,
 				0E20FE1E2BCAC03900DBAEA2 /* SettingsItemLabel.swift in Sources */,
+				0E7BF1482BCD53C0009379B6 /* ShowProfileView.swift in Sources */,
 				0E7275452BC6B6FB00B1778D /* OptionsList.swift in Sources */,
 				0E4ED2C52BC0007300C34A8F /* TextFieldCustom.swift in Sources */,
 				0E7800BF2BC7D923007130E5 /* HardcodedData.swift in Sources */,
+				0E7BF1262BCD2C1F009379B6 /* SwitchToHostingView.swift in Sources */,
 				0E7275382BC5401B00B1778D /* SearchBarCustom.swift in Sources */,
+				0E7BF1362BCD2CF3009379B6 /* FeedbackView.swift in Sources */,
 				0E4ED2922BBEFA1100C34A8F /* TabBarView.swift in Sources */,
 				0E7800D12BC97217007130E5 /* RatingCounter.swift in Sources */,
+				0E7BF1242BCD2C03009379B6 /* PrivacyAndSharingView.swift in Sources */,
+				0E7BF11A2BCD2BA6009379B6 /* TaxesView.swift in Sources */,
+				0E7BF12E2BCD2C9A009379B6 /* HowAirbnbWorksView.swift in Sources */,
+				0E7BF12A2BCD2C65009379B6 /* YourGuidebooksView.swift in Sources */,
+				0E7BF1182BCD2B97009379B6 /* PaymentsAndPayoutsView.swift in Sources */,
 				0E72753C2BC5900200B1778D /* BubbleArrayList.swift in Sources */,
 				0E7800CB2BC94310007130E5 /* ImageSwiper.swift in Sources */,
+				0E7BF1382BCD2D08009379B6 /* TermsOfServiceView.swift in Sources */,
 				0E7275432BC6A05C00B1778D /* CheckboxShape.swift in Sources */,
 				0E72753E2BC6800D00B1778D /* PropertyTypeLabel.swift in Sources */,
+				0E7BF11E2BCD2BCC009379B6 /* AccessibilityView.swift in Sources */,
+				0E7BF1282BCD2C54009379B6 /* ListYourSpaceView.swift in Sources */,
 				0E4ED2CC2BC04F3300C34A8F /* TextAuthentificationForm.swift in Sources */,
+				0E7BF1162BCD2B76009379B6 /* PersonalInformationView.swift in Sources */,
+				0E7BF13C2BCD2D8C009379B6 /* OpenSourceLicencesView.swift in Sources */,
+				0E7BF1342BCD2CE1009379B6 /* GetHelpView.swift in Sources */,
+				0E7BF11C2BCD2BB8009379B6 /* LoginAndSecurityView.swift in Sources */,
 				0E7800C32BC92FC7007130E5 /* PostView.swift in Sources */,
 				0E7275472BC6D43300B1778D /* BookingOption.swift in Sources */,
 				0E4ED2902BBEFA1100C34A8F /* AirbnbApp.swift in Sources */,
@@ -497,6 +652,7 @@
 				0E4ED2C32BBFEF7E00C34A8F /* AuthentificationView.swift in Sources */,
 				0E7800D32BC98131007130E5 /* ImagesSwiperWithCounter.swift in Sources */,
 				0E4ED2DC2BC0672E00C34A8F /* TripsView.swift in Sources */,
+				0E7BF14A2BCD53DC009379B6 /* AirbnbYourPlaceView.swift in Sources */,
 				0E4ED2C92BC0232D00C34A8F /* SignupView.swift in Sources */,
 				0E72753A2BC5467200B1778D /* ExploreFilterView.swift in Sources */,
 			);

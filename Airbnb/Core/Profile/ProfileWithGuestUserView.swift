@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+
 struct ProfileWithGuestUserView: View {
     
+  
     @State private var isAuthentificationSheetPresented = false
+    @State private var isAirbnbYourPlaceSheetPresented = false
+    
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,7 +21,6 @@ struct ProfileWithGuestUserView: View {
             Text("Log in to start planning your next trip")
                 .font(.system(size: 17))
                 .foregroundColor(GRAY_CUSTOM3)
-                .frame(maxWidth: .infinity, alignment: .leading)
             
             Button {
                 isAuthentificationSheetPresented.toggle()
@@ -40,27 +43,51 @@ struct ProfileWithGuestUserView: View {
                     .underline()
             }
             
-            AirbnbYourPlace()
-                .padding(.vertical, 50)
-            
+            Button {
+                isAirbnbYourPlaceSheetPresented.toggle()
+            } label: {
+                AirbnbYourPlace()
+            }
+            .padding(.vertical, 30)
+            .tint(.black)
+
+
             VStack {
+
+                NavigationLink {
+                    Text("settings")
+                } label: {
+                    SettingsItemLabel(image: SettingsItems.settings.imageName, text: SettingsItems.settings.rawValue)
+                }
                 
-                SettingsItemLabel(image: "gear", text: "Settings")
-         
-                SettingsItemLabel(image: "gear", text: "Settings")
-               
-                SettingsItemLabel(image: "gear", text: "Settings")
-             
-                SettingsItemLabel(image: "gear", text: "Settings")
-             
+                NavigationLink {
+                    Text("accesibility")
+                } label: {
+                    SettingsItemLabel(image: SettingsItems.accessibility.imageName, text: SettingsItems.accessibility.rawValue)
+                }
+                
+                NavigationLink {
+                    Text("get help")
+                } label: {
+                    SettingsItemLabel(image: SettingsItems.getHelp.imageName, text: SettingsItems.getHelp.rawValue)
+                }
+                
+                NavigationLink {
+                    Text("third-party tools")
+                } label: {
+                    SettingsItemLabel(image: SettingsItems.thirdPartyTools.imageName, text: SettingsItems.thirdPartyTools.rawValue)
+                }
                 
             }
-            
+            .tint(.black)
             
             Spacer()
         }
         .sheet(isPresented: $isAuthentificationSheetPresented, content: {
             AuthentificationView(isShowingAuthentificationView: $isAuthentificationSheetPresented)
+        })
+        .sheet(isPresented: $isAirbnbYourPlaceSheetPresented, content: {
+            AirbnbYourPlaceView()
         })
         .padding()
     }
@@ -68,6 +95,8 @@ struct ProfileWithGuestUserView: View {
 
 struct ProfileWithGuestUserView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileWithGuestUserView()
+        NavigationStack {
+            ProfileWithGuestUserView()
+        }
     }
 }

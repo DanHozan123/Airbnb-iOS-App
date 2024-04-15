@@ -16,7 +16,9 @@ struct SettingsItemLabel: View {
         
         VStack {
             HStack {
-                Image(systemName: "gear")
+                Image(systemName: image)
+                    .resizable()
+                    .frame(width: 20, height: 20)
                 Text(text)
                 Spacer()
                 Image(systemName: "chevron.right")

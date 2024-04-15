@@ -15,14 +15,11 @@ struct ProfileView: View {
         NavigationStack {
             
             VStack {
-                
-            if let user = user {
-                ProfileWithUserView(user: user)
-                
-            } else {
-                ProfileWithGuestUserView()
-            }
-
+                if let user = user {
+                    ProfileWithUserView(user: user)
+                } else {
+                    ProfileWithGuestUserView()
+                }
             }
             .navigationTitle("Profile")
         }
@@ -31,6 +28,8 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        NavigationStack {
+            ProfileView(user: MOCK_DATA_USER)
+        }
     }
 }

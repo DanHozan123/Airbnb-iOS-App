@@ -30,7 +30,7 @@ struct ExploreView: View {
     
     var body: some View {
         
-        NavigationStack{
+        NavigationStack {
             VStack {
                 
                 SearchBarCustom(searchText: $searchText, showFilterView: $showFilterView)

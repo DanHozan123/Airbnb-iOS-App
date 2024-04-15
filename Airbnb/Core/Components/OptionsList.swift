@@ -21,7 +21,6 @@ struct OptionsList: View {
         VStack(alignment: .leading) {
             Text(title)
                 .fontWeight(.medium)
-                .frame(maxWidth: .infinity, alignment: .leading)
             
             ForEach(options.prefix(isExpanded ? options.count : 3), id: \.self) { option in
                 CheckboxShape(option: $options[options.firstIndex(of: option)!])
