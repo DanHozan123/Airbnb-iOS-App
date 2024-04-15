@@ -95,6 +95,7 @@ enum HostLanguageOption: String, CaseIterable {
     case czech = "Czech"
     case hungarian = "Hungarian"
     case ukrainian = "Ukrainian"
+    case romanian = "Romanian"
 }
 
 enum PropertyTypesCategory: String, CaseIterable {

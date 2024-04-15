@@ -163,6 +163,7 @@ struct ExploreFilterView: View {
                     .padding(.vertical)
                     
                     Divider()
+                        .background(.gray)
                     
                     VStack(alignment: .leading) {
                         Text("Price range")
@@ -202,6 +203,7 @@ struct ExploreFilterView: View {
                     .padding(.vertical)
                     
                     Divider()
+                        .background(.gray)
                     
                     VStack {
                         Text("Bedrooms")
@@ -222,6 +224,7 @@ struct ExploreFilterView: View {
                     .padding(.vertical)
                     
                     Divider()
+                        .background(.gray)
                     
                     VStack {
                         Text("Top-tier stays")
@@ -270,6 +273,7 @@ struct ExploreFilterView: View {
                     }.padding(.vertical)
                     
                     Divider()
+                        .background(.gray)
                     
                     VStack {
                         Text("Property type")
@@ -289,6 +293,7 @@ struct ExploreFilterView: View {
                     .padding(.vertical)
                     
                     Divider()
+                        .background(.gray)
                     
                 }
                 
@@ -322,6 +327,7 @@ struct ExploreFilterView: View {
                     .padding(.vertical)
                     
                     Divider()
+                        .background(.gray)
                     
                     VStack() {
                         Text("Booking options")
@@ -339,6 +345,7 @@ struct ExploreFilterView: View {
                     .padding(.vertical)
                     
                     Divider()
+                        .background(.gray)
                     
                     VStack() {
                         Text("Accessibility features")
@@ -382,6 +389,7 @@ struct ExploreFilterView: View {
                     }
                     
                     Divider()
+                        .background(.gray)
                     
                     OptionsList(title: "Host Language", options: $hostLanguage)
                         .padding(.bottom, 15)

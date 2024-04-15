@@ -29,14 +29,8 @@ struct AddPassword: View {
                 Text("Enter your password associated with your email.")
                     .modifier(TextAuthentificationForm())
                 
-                NavigationLink(destination: Text("password")) {
-                    Text("Continue")
-                        .frame(maxWidth: .infinity)
-                        .font(.system(size: 14))
-                        .foregroundColor(.white)
-                        .padding(10)
-                        .background(.black)
-                        .cornerRadius(5)
+                NavigationLink(destination: Text("password enterd")) {
+                    ButtonLabel(text: "Continue", color: .black)
                         .padding(.vertical, 20)
                 }
                 

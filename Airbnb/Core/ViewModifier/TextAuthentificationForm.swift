@@ -14,6 +14,5 @@ struct TextAuthentificationForm: ViewModifier {
         content
             .font(.footnote)
             .foregroundColor(.gray)
-            .padding(.leading, 1)
     }
 }

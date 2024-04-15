@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    var user: User?
+    
     var body: some View {
-        Text("Profile View")
+        NavigationStack {
+            
+            VStack {
+                
+            if let user = user {
+                ProfileWithUserView(user: user)
+                
+            } else {
+                ProfileWithGuestUserView()
+            }
+
+            }
+            .navigationTitle("Profile")
+        }
     }
 }
 

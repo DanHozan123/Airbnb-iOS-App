@@ -77,26 +77,23 @@ struct SignupView: View {
                         .fontWeight(.semibold)
                     
                     NavigationLink(destination: Text("agree and continue")) {
-                        Text("Agree and continue")
-                            .frame(maxWidth: .infinity)
-                            .font(.system(size: 14))
-                            .foregroundColor(.white)
-                            .padding(10)
-                            .background(.black)
-                            .cornerRadius(5)
+                        ButtonLabel(text: "Agree and continue", color: .black)
                             .padding(.vertical, 20)
                     }
                     
                     Divider()
+                        .background(.gray)
                     
                     Text("Airbnb will send you members-only deals, inspiration, marketing emails, and push notifications. You can opt out of receiving these at any time in your account settings or directly from the marketing notification.")
-                        .modifier(TextAuthentificationForm())
+                        .font(.footnote)
+                        .foregroundColor(GRAY_CUSTOM3)
                 }
                 
                 HStack {
                     Toggle(isOn: $receiveMail) {
                         Text("I don’t want to receive marketing messages from Airbnb.")
-                            .modifier(TextAuthentificationForm())
+                            .font(.footnote)
+                            .foregroundColor(GRAY_CUSTOM3)
                     }
                   
                     Spacer()

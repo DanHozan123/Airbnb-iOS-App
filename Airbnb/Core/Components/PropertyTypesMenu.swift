@@ -31,10 +31,10 @@ struct PropertyTypesMenu: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 25, height: 25)
-                                .foregroundColor(optionPropertyMenu[index].isTapped ? Color.black : Color.gray)
+                                .foregroundColor(optionPropertyMenu[index].isTapped ? Color.black : GRAY_CUSTOM2)
                             Text(menu.propertyTypesCategory.rawValue)
                                 .font(.footnote)
-                                .foregroundColor(optionPropertyMenu[index].isTapped ? Color.black : Color.gray)
+                                .foregroundColor(optionPropertyMenu[index].isTapped ? Color.black : GRAY_CUSTOM2)
                         }
                         .padding(.bottom, 8)
                     }

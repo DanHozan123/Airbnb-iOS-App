@@ -11,10 +11,10 @@ struct AuthentificationView: View {
     
     @State var phoneNumber = ""
     @State var email = ""
-    @State var isShowingAuthentificationView = false
     @State var continueWithPhone = true
     
-    
+    @Binding var isShowingAuthentificationView: Bool
+
     var body: some View {
         
         NavigationStack {
@@ -35,13 +35,7 @@ struct AuthentificationView: View {
                 
                 
                 NavigationLink(destination: SignupView()) {
-                    Text("Continue")
-                        .frame(maxWidth: .infinity)
-                        .font(.system(size: 14))
-                        .foregroundColor(.white)
-                        .padding(10)
-                        .background(.pink)
-                        .cornerRadius(5)
+                    ButtonLabel(text: "Continue", color: Color.pink)
                 }
                 .padding(.top, 15)
                 
@@ -92,7 +86,7 @@ struct AuthentificationView: View {
     
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        isShowingAuthentificationView = false
+                        isShowingAuthentificationView.toggle()
                     } label: {
                         Image(systemName: "x.circle.fill")
                             .renderingMode(.template)
@@ -115,6 +109,6 @@ struct AuthentificationView: View {
 
 struct AuthentificationView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthentificationView()
+        AuthentificationView(isShowingAuthentificationView: .constant(true))
     }
 }
