@@ -33,7 +33,7 @@ struct InboxView: View {
                         Button {
                             showAuthentificationView.toggle()
                         } label: {
-                            ButtonLabel(text: "Lon in", color: .pink)
+                            ButtonLabelWithColor(text: "Lon in", color: .pink)
                                 .padding(.trailing, UIScreen.main.bounds.width / 1.5)
                                 .padding(.top, 50)
                         }

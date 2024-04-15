@@ -15,24 +15,21 @@ struct ProfileWithUserView: View {
     @State private var isAirbnbYourPlaceSheetPresented = false
     
     var body: some View {
-        
         ScrollView {
-            
-            
             VStack(alignment: .leading) {
                 VStack {
                     NavigationLink {
-                        ShowProfileView()
+                        ShowProfileView(user: user)
                     } label: {
                         
                         HStack {
-                            Image("Daniel Day-Lewis")
+                            Image(user.image)
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 45, height: 45)
                                 .clipShape(Circle())
                             VStack(alignment: .leading) {
-                                Text(user.fullname)
+                                Text("\(user.firstName) \(user.lastName)")
                                     .font(.system(size: 17))
                                 Text("Show profile")
                                     .font(.system(size: 13))
@@ -65,7 +62,7 @@ struct ProfileWithUserView: View {
                         .padding(.bottom, 10)
                     
                     NavigationLink {
-                        PersonalInformationView()
+                        PersonalInformationView(user: user)
                     } label: {
                         SettingsItemLabel(image: SettingsItems2.personalInformation.imageName, text:  SettingsItems2.personalInformation.rawValue)
                     }
@@ -242,7 +239,24 @@ struct ProfileWithUserView: View {
                 AirbnbYourPlaceView()
             })
             .padding()
-            .navigationTitle("Profile")
+            .navigationBarTitle("")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Profile")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        print("notification")
+                    } label: {
+                        Image(systemName: "bell")
+                            .foregroundColor(GRAY_CUSTOM4)
+                    }
+                    .tint(.black)
+
+                }
+            }
         }
     }
 }

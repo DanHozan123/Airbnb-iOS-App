@@ -44,7 +44,7 @@ struct ExploreFilterView: View {
     @State var selectedApartment = false
     @State var selectedGuesthouse = false
     @State var selectedHotel = false
-        
+    
     @State var essentials: [Option] = {
         var options: [Option] = []
         for option in AmenityOption.allCases {
@@ -98,305 +98,334 @@ struct ExploreFilterView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                
-                //property types
-                VStack(alignment: .leading) {
+            ZStack(alignment: .bottom) {
+                ScrollView {
                     
-                    VStack {
+                    //property types
+                    VStack(alignment: .leading) {
+                        
+                        VStack {
+                            VStack(alignment: .leading) {
+                                Text("Property Type")
+                                    .fontWeight(.medium)
+                                    .padding(.bottom, 5)
+                                
+                                Text("Search rooms, entire homes, or any type of place")
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                                
+                            }
+                            .padding(.bottom, 10)
+                            
+                            HStack(spacing: 0) {
+                                Button {
+                                    typeOfPlace = .anyType
+                                    
+                                } label: {
+                                    Text(TypeOfPlace.anyType.title)
+                                        .font(.subheadline)
+                                        .frame(width: 100, height: 40)
+                                        .background(typeOfPlace == .anyType ? .black : .white)
+                                        .foregroundColor(typeOfPlace == .anyType ? .white : .black)
+                                }.overlay(
+                                    RoundedRectangle(cornerRadius: 0)
+                                        .stroke(Color.gray, lineWidth: 1)
+                                )
+                                
+                                Button {
+                                    typeOfPlace = .room
+                                } label: {
+                                    Text(TypeOfPlace.room.title)
+                                        .font(.subheadline)
+                                        .frame(width: 100, height: 40)
+                                        .background(typeOfPlace == .room ? .black : .white)
+                                        .foregroundColor(typeOfPlace == .room ? .white : .black)
+                                }.overlay(
+                                    RoundedRectangle(cornerRadius: 0)
+                                        .stroke(Color.gray, lineWidth: 1)
+                                )
+                                
+                                Button {
+                                    typeOfPlace = .entireHome
+                                } label: {
+                                    Text(TypeOfPlace.entireHome.title)
+                                        .font(.subheadline)
+                                        .frame(width: 100, height: 40)
+                                        .background(typeOfPlace == .entireHome ? .black : .white)
+                                        .foregroundColor(typeOfPlace == .entireHome ? .white : .black)
+                                }.overlay(
+                                    RoundedRectangle(cornerRadius: 0)
+                                        .stroke(Color.gray, lineWidth: 1)
+                                )
+                            }
+                            .tint(.black)
+                        }
+                        .padding(.vertical)
+                        
+                        Divider()
+                            .background(.gray)
+                        
                         VStack(alignment: .leading) {
-                            Text("Property Type")
+                            Text("Price range")
                                 .fontWeight(.medium)
                                 .padding(.bottom, 5)
                             
-                            Text("Search rooms, entire homes, or any type of place")
+                            Text("Nighly prices including fees and taxes")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                            
+                            HStack() {
+                                Spacer()
+                                TextField("Minimum", text: $minimumPrice)
+                                    .padding(10)
+                                    .frame(width: 120)
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.gray, lineWidth: 1)
+                                    }
+                                Spacer()
+                                Rectangle()
+                                    .frame(width: 50, height: 1)
+                                    .foregroundColor(Color.gray)
+                                
+                                Spacer()
+                                TextField("Maximum", text: $maximumPrice)
+                                    .padding(10)
+                                    .frame(width: 120)
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.gray, lineWidth: 1)
+                                    }
+                                Spacer()
+                            }
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.vertical)
+                        
+                        Divider()
+                            .background(.gray)
+                        
+                        VStack(alignment: .leading) {
+                            Text("Bedrooms")
+                            BubbleArrayList(selectedBubble: $selectedBubbleBedrooms)
+                            
+                            Text("Beds")
+                            BubbleArrayList(selectedBubble: $selectedBubbleBeds)
+                            
+                            Text("Bathrooms")
+                            BubbleArrayList(selectedBubble: $selectedBubbleBathrooms)
+                        }
+                        .padding(.vertical)
+                        .fontWeight(.medium)
+                        
+                        Divider()
+                            .background(.gray)
+                        
+                        VStack(alignment: .leading) {
+                            Text("Top-tier stays")
+                                .fontWeight(.medium)
+                            
+                            Button {
+                                guestFavourites.toggle()
+                            } label: {
+                                VStack(alignment: .leading) {
+                                    Image(systemName: "star")
+                                        .renderingMode(.template)
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .padding(.top, 8)
+                                        .padding(.leading, 8)
+                                    
+                                    Spacer()
+                                    
+                                    Text("Guest favourites")
+                                        .fontWeight(.medium)
+                                        .padding(.leading, 5)
+                                        .padding(.bottom, 3)
+                                    
+                                    
+                                    Text("The most loved homes on Airbnb, according to guests")
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+                                        .padding(.leading, 5)
+                                        .padding(.bottom, 5)
+                                        .multilineTextAlignment(.leading)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                    
+                                    
+                                }
+                                .frame(height: 130)
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(guestFavourites ? Color.black : Color.gray, lineWidth: 1)
+                                }
+                                .tint(.black)
+                                .background(guestFavourites ? Color.gray.opacity(0.1) : .white)
+                                .cornerRadius(10)
+                            }
+                        }.padding(.vertical)
+                        
+                        Divider()
+                            .background(.gray)
+                        
+                        VStack(alignment: .leading) {
+                            Text("Property type")
+                                .fontWeight(.medium)
+                            HStack {
+                                PropertyTypeLabel(image: "house", name: "House", selected: $selectedHouse)
+                                PropertyTypeLabel(image: "building.2", name: "Apartment", selected: $selectedApartment)
+                            }
+                            HStack {
+                                PropertyTypeLabel(image: "house.lodge", name: "Guesthouse", selected: $selectedGuesthouse)
+                                PropertyTypeLabel(image: "building.columns", name: "Hotel", selected: $selectedHotel)
+                            }
+                            
+                        }
+                        .padding(.vertical)
+                        
+                        Divider()
+                            .background(.gray)
+                        
+                    }
+                    
+                    //property options
+                    VStack() {
+                        
+                        VStack(alignment: .leading) {
+                            OptionsList(title: "Essentials", options: $essentials)
+                                .padding(.bottom, 15)
+                            OptionsList(title: "Features", options: $features)
+                                .padding(.bottom, 15)
+                            
+                            Text("Location")
+                                .fontWeight(.medium)
+                            
+                            ForEach(location, id: \.self) { option in
+                                CheckboxShape(option: $location[location.firstIndex(of: option)!])
+                            }
+                            .padding(.bottom, 15)
+                            
+                            
+                            Text("Safety")
+                                .fontWeight(.medium)
+                            
+                            ForEach(safety, id: \.self) { option in
+                                CheckboxShape(option: $safety[safety.firstIndex(of: option)!])
+                            }
+                        }
+                        .padding(.vertical)
+                        
+                        Divider()
+                            .background(.gray)
+                        
+                        VStack(alignment: .leading) {
+                            Text("Booking options")
+                                .fontWeight(.medium)
+                            
+                            BookingOption(bookingOptionIsOn: $instantBook, title: "Instant Book", subheadline: "Book without waiting for the host to to respond")
+                                .padding(.bottom, 15)
+                            
+                            BookingOption(bookingOptionIsOn: $selfCheckIn, title: "Self check-in", subheadline: "Easy access to the property once you arrive")
+                                .padding(.bottom, 15)
+                            
+                            BookingOption(bookingOptionIsOn: $allowsPets, title: "Allows pets", subheadline: "Bringing a service animal")
+                        }
+                        .padding(.vertical)
+                        
+                        Divider()
+                            .background(.gray)
+                        
+                        VStack(alignment: .leading) {
+                            Text("Accessibility features")
+                                .fontWeight(.medium)
+                                .padding(.bottom, 3)
+                            
+                            Text("This info was provided by the Host and reviewed by Airbnb.")
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                             
                         }
-                        .padding(.bottom, 10)
+                        .padding(.vertical)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        HStack(spacing: 0) {
-                            Button {
-                                typeOfPlace = .anyType
-                                
-                            } label: {
-                                Text(TypeOfPlace.anyType.title)
-                                    .font(.subheadline)
-                                    .frame(width: 100, height: 40)
-                                    .background(typeOfPlace == .anyType ? .black : .white)
-                                    .foregroundColor(typeOfPlace == .anyType ? .white : .black)
-                            }.overlay(
-                                RoundedRectangle(cornerRadius: 0)
-                                    .stroke(Color.gray, lineWidth: 1)
-                            )
+                        VStack(alignment: .leading) {
+                            OptionsList(title: "Guest entrance and parking", options: $guestEntrance)
+                                .padding(.bottom, 15)
                             
-                            Button {
-                                typeOfPlace = .room
-                            } label: {
-                                Text(TypeOfPlace.room.title)
-                                    .font(.subheadline)
-                                    .frame(width: 100, height: 40)
-                                    .background(typeOfPlace == .room ? .black : .white)
-                                    .foregroundColor(typeOfPlace == .room ? .white : .black)
-                            }.overlay(
-                                RoundedRectangle(cornerRadius: 0)
-                                    .stroke(Color.gray, lineWidth: 1)
-                            )
+                            Text("Bedroom")
+                                .fontWeight(.medium)
+                                .padding(.bottom, 3)
                             
-                            Button {
-                                typeOfPlace = .entireHome
-                            } label: {
-                                Text(TypeOfPlace.entireHome.title)
-                                    .font(.subheadline)
-                                    .frame(width: 100, height: 40)
-                                    .background(typeOfPlace == .entireHome ? .black : .white)
-                                    .foregroundColor(typeOfPlace == .entireHome ? .white : .black)
-                            }.overlay(
-                                RoundedRectangle(cornerRadius: 0)
-                                    .stroke(Color.gray, lineWidth: 1)
-                            )
+                            ForEach(bedroom, id: \.self) { option in
+                                CheckboxShape(option: $bedroom[bedroom.firstIndex(of: option)!])
+                            }
+                            .padding(.bottom, 15)
+                            
+                            
+                            OptionsList(title: "Bathroom", options: $bathroom)
+                                .padding(.bottom, 15)
+                            
+                            Text("Adaptive equipment")
+                                .fontWeight(.medium)
+                                .padding(.bottom, 3)
+                            ForEach(addaptiveEquipment, id: \.self) { option in
+                                CheckboxShape(option: $addaptiveEquipment[addaptiveEquipment.firstIndex(of: option)!])
+                            }
+                            .padding(.bottom, 15)
+                            
+                        }
+                        
+                        Divider()
+                            .background(.gray)
+                        
+                        OptionsList(title: "Host Language", options: $hostLanguage)
+                            .padding(.bottom, 15)
+                    }
+                    
+                }
+                .padding(.bottom, 90)
+                
+                VStack {
+                    HStack {
+                        Button {
+                        } label: {
+                            Text("Clear all")
+                                .foregroundColor(.black)
+                                .underline()
+                                .font(.subheadline)
                         }
                         .tint(.black)
-                    }
-                    .padding(.vertical)
-                    
-                    Divider()
-                        .background(.gray)
-                    
-                    VStack(alignment: .leading) {
-                        Text("Price range")
-                            .fontWeight(.medium)
-                            .padding(.bottom, 5)
                         
-                        Text("Nighly prices including fees and taxes")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                        Spacer()
                         
-                        HStack() {
-                            Spacer()
-                            TextField("Minimum", text: $minimumPrice)
-                                .padding(10)
-                                .frame(width: 120)
-                                .overlay {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.gray, lineWidth: 1)
-                                }
-                            Spacer()
-                            Rectangle()
-                                .frame(width: 50, height: 1)
-                                .foregroundColor(Color.gray)
-                            
-                            Spacer()
-                            TextField("Maximum", text: $maximumPrice)
-                                .padding(10)
-                                .frame(width: 120)
-                                .overlay {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.gray, lineWidth: 1)
-                                }
-                            Spacer()
-                        }
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical)
-                    
-                    Divider()
-                        .background(.gray)
-                    
-                    VStack(alignment: .leading) {
-                        Text("Bedrooms")
-                        BubbleArrayList(selectedBubble: $selectedBubbleBedrooms)
-                        
-                        Text("Beds")
-                        BubbleArrayList(selectedBubble: $selectedBubbleBeds)
-                        
-                        Text("Bathrooms")
-                        BubbleArrayList(selectedBubble: $selectedBubbleBathrooms)
-                    }
-                    .padding(.vertical)
-                    .fontWeight(.medium)
-                    
-                    Divider()
-                        .background(.gray)
-                    
-                    VStack(alignment: .leading) {
-                        Text("Top-tier stays")
-                            .fontWeight(.medium)
-                                                
                         Button {
-                            guestFavourites.toggle()
                         } label: {
-                            VStack(alignment: .leading) {
-                                Image(systemName: "star")
-                                    .renderingMode(.template)
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    .padding(.top, 8)
-                                    .padding(.leading, 8)
-                                
-                                Spacer()
-                                
-                                Text("Guest favourites")
-                                    .fontWeight(.medium)
-                                    .padding(.leading, 5)
-                                    .padding(.bottom, 3)
-                                
-                                
-                                Text("The most loved homes on Airbnb, according to guests")
-                                    .font(.subheadline)
-                                       .foregroundColor(.gray)
-                                       .padding(.leading, 5)
-                                       .padding(.bottom, 5)
-                                       .multilineTextAlignment(.leading)
-                                       .frame(maxWidth: .infinity, alignment: .leading)
-                                    
-                                
-                            }
-                            .frame(height: 130)
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(guestFavourites ? Color.black : Color.gray, lineWidth: 1)
-                            }
-                            .tint(.black)
-                            .background(guestFavourites ? Color.gray.opacity(0.1) : .white)
-                            .cornerRadius(10)
+                            ButtonLabelWithColor(text: "Show places", color: .black)
+                                .frame(width: 150)
                         }
-                    }.padding(.vertical)
-                    
-                    Divider()
-                        .background(.gray)
-                    
-                    VStack(alignment: .leading) {
-                        Text("Property type")
-                            .fontWeight(.medium)
-                        HStack {
-                            PropertyTypeLabel(image: "house", name: "House", selected: $selectedHouse)
-                            PropertyTypeLabel(image: "building.2", name: "Apartment", selected: $selectedApartment)
-                        }
-                        HStack {
-                            PropertyTypeLabel(image: "house.lodge", name: "Guesthouse", selected: $selectedGuesthouse)
-                            PropertyTypeLabel(image: "building.columns", name: "Hotel", selected: $selectedHotel)
-                        }
-                        
+                       
                     }
-                    .padding(.vertical)
-                    
-                    Divider()
-                        .background(.gray)
-                    
+                    .padding(.top, 15)
+                    Spacer()
                 }
-                
-                //property options
-                VStack() {
-                    
-                    VStack(alignment: .leading) {
-                        OptionsList(title: "Essentials", options: $essentials)
-                            .padding(.bottom, 15)
-                        OptionsList(title: "Features", options: $features)
-                            .padding(.bottom, 15)
-                        
-                        Text("Location")
-                            .fontWeight(.medium)
-                        
-                        ForEach(location, id: \.self) { option in
-                            CheckboxShape(option: $location[location.firstIndex(of: option)!])
-                        }
-                        .padding(.bottom, 15)
-                        
-                        
-                        Text("Safety")
-                            .fontWeight(.medium)
-                        
-                        ForEach(safety, id: \.self) { option in
-                            CheckboxShape(option: $safety[safety.firstIndex(of: option)!])
-                        }
-                    }
-                    .padding(.vertical)
-                    
-                    Divider()
-                        .background(.gray)
-                    
-                    VStack(alignment: .leading) {
-                        Text("Booking options")
-                            .fontWeight(.medium)
-                        
-                        BookingOption(bookingOptionIsOn: $instantBook, title: "Instant Book", subheadline: "Book without waiting for the host to to respond")
-                            .padding(.bottom, 15)
-                        
-                        BookingOption(bookingOptionIsOn: $selfCheckIn, title: "Self check-in", subheadline: "Easy access to the property once you arrive")
-                            .padding(.bottom, 15)
-                        
-                        BookingOption(bookingOptionIsOn: $allowsPets, title: "Allows pets", subheadline: "Bringing a service animal")
-                    }
-                    .padding(.vertical)
-                    
-                    Divider()
-                        .background(.gray)
-                    
-                    VStack(alignment: .leading) {
-                        Text("Accessibility features")
-                            .fontWeight(.medium)
-                            .padding(.bottom, 3)
-                        
-                        Text("This info was provided by the Host and reviewed by Airbnb.")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                            
-                    }
-                    .padding(.vertical)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    VStack(alignment: .leading) {
-                        OptionsList(title: "Guest entrance and parking", options: $guestEntrance)
-                            .padding(.bottom, 15)
-                        
-                        Text("Bedroom")
-                            .fontWeight(.medium)
-                            .padding(.bottom, 3)
-                        
-                        ForEach(bedroom, id: \.self) { option in
-                            CheckboxShape(option: $bedroom[bedroom.firstIndex(of: option)!])
-                        }
-                        .padding(.bottom, 15)
-                        
-                        
-                        OptionsList(title: "Bathroom", options: $bathroom)
-                            .padding(.bottom, 15)
-                        
-                        Text("Adaptive equipment")
-                            .fontWeight(.medium)
-                            .padding(.bottom, 3)
-                        ForEach(addaptiveEquipment, id: \.self) { option in
-                            CheckboxShape(option: $addaptiveEquipment[addaptiveEquipment.firstIndex(of: option)!])
-                        }
-                        .padding(.bottom, 15)
-
-                    }
-                    
-                    Divider()
-                        .background(.gray)
-                    
-                    OptionsList(title: "Host Language", options: $hostLanguage)
-                        .padding(.bottom, 15)
-                }
-                
-                
+                .frame(maxHeight: 90)
+                .background(.white)
                 
             }
-            .padding(.horizontal)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         showFilterView.toggle()
                     } label: {
-                        Image(systemName: "x.circle.fill")
-                            .foregroundColor(.black)
+                        XButtonLabel()
                     }
                 }
             }
             .navigationTitle("Filters")
             .navigationBarTitleDisplayMode(.inline)
+            .ignoresSafeArea(.all, edges: .bottom)
+            .padding(.horizontal)
+            
         }
     }
 }

@@ -77,7 +77,7 @@ struct SignupView: View {
                         .fontWeight(.semibold)
                     
                     NavigationLink(destination: Text("agree and continue")) {
-                        ButtonLabel(text: "Agree and continue", color: .black)
+                        ButtonLabelWithColor(text: "Agree and continue", color: .black)
                             .padding(.vertical, 20)
                     }
                     
@@ -114,8 +114,7 @@ struct SignupView: View {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.black)
+                        BackButtonLabel()
                     }
                 }
             }

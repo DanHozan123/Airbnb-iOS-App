@@ -30,7 +30,7 @@ struct AddPassword: View {
                     .modifier(TextAuthentificationForm())
                 
                 NavigationLink(destination: Text("password enterd")) {
-                    ButtonLabel(text: "Continue", color: .black)
+                    ButtonLabelWithColor(text: "Continue", color: .black)
                         .padding(.vertical, 20)
                 }
                 
@@ -49,8 +49,7 @@ struct AddPassword: View {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.black)
+                        BackButtonLabel()
                     }
                 }
             }

@@ -45,7 +45,7 @@ struct PostDetailsView: View {
                     Image(systemName: "chevron.left")
                         .renderingMode(.template)
                         .resizable()
-                        .frame(width: 8, height: 10)
+                        .frame(width: 7.5, height: 10)
                         .foregroundColor(.black)
                         .frame(width: 25, height: 25)
                         .background(.white)

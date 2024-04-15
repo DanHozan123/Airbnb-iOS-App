@@ -35,7 +35,7 @@ struct AuthentificationView: View {
                 
                 
                 NavigationLink(destination: SignupView()) {
-                    ButtonLabel(text: "Continue", color: Color.pink)
+                    ButtonLabelWithColor(text: "Continue", color: Color.pink)
                 }
                 .padding(.top, 15)
                 
@@ -56,26 +56,26 @@ struct AuthentificationView: View {
                         continueWithPhone.toggle()
                         phoneNumber = ""
                     } label: {
-                        ButtonLabelCustom(input: "Continue with email", image: "email")
+                        ButtonLabelWithRectangle(input: "Continue with email", image: "email")
                     }
                 } else {
                     Button{
                         continueWithPhone.toggle()
                         email = ""
                     } label: {
-                        ButtonLabelCustom(input: "Continue with phone", image: "phone")
+                        ButtonLabelWithRectangle(input: "Continue with phone", image: "phone")
                     }
                 }
                 
                 Button{} label: {
-                    ButtonLabelCustom(input: "Continue with apple", image: "apple")
+                    ButtonLabelWithRectangle(input: "Continue with apple", image: "apple")
                 }
                 
                 Button{} label: {
-                    ButtonLabelCustom(input: "Continue with google", image: "google")
+                    ButtonLabelWithRectangle(input: "Continue with google", image: "google")
                 }
                 Button{} label: {
-                    ButtonLabelCustom(input: "Continue with facebook", image: "facebook")
+                    ButtonLabelWithRectangle(input: "Continue with facebook", image: "facebook")
                 }
                 
                 Spacer()
@@ -88,10 +88,7 @@ struct AuthentificationView: View {
                     Button {
                         isShowingAuthentificationView.toggle()
                     } label: {
-                        Image(systemName: "x.circle.fill")
-                            .renderingMode(.template)
-                            .foregroundColor(.black)
-                        
+                        XButtonLabel()
                     }
                     
                     .buttonStyle(.plain)

@@ -36,7 +36,7 @@ struct PostView: View {
            
             
             VStack(alignment: .leading){
-                Text("Hosted by \(user.fullname)")
+                Text("Hosted by \(user.firstName) \(user.lastName)")
                     .font(.subheadline)
                     .foregroundColor(.gray)
                 

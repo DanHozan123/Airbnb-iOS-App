@@ -25,7 +25,7 @@ struct ProfileWithGuestUserView: View {
             Button {
                 isAuthentificationSheetPresented.toggle()
             } label: {
-                ButtonLabel(text: "Log in", color: .pink)
+                ButtonLabelWithColor(text: "Log in", color: .pink)
                     .padding(.top, 20)
                     .padding(.bottom, 8)
             }

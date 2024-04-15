@@ -39,9 +39,10 @@ struct AirbnbYourPlace: View {
         .frame(height: 120)
         .background(
             RoundedRectangle(cornerRadius: 15)
-                .fill(Color.white)
-                .shadow(radius: 7, x: 0, y: 2)
+                .fill(.white)
+                .shadow(radius: 10, x: 0, y: 4)
         )
+        
         
     }
 }

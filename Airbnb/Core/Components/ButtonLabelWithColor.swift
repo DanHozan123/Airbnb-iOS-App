@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ButtonRectangleLabel: View {
+struct ButtonLabelWithColor: View {
     
     var text: String
     var color: Color
@@ -25,8 +25,8 @@ struct ButtonRectangleLabel: View {
     }
 }
 
-struct ButtonLabel_Previews: PreviewProvider {
+struct ButtonLabelWithColor_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonRectangleLabel(text: "Enter", color: Color.pink)
+        ButtonLabelWithColor(text: "Enter", color: Color.pink)
     }
 }

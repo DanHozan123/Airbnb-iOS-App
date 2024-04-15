@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     
+    var user = MOCK_DATA_USER
     
     var body: some View {
         VStack {
@@ -37,7 +38,7 @@ struct TabBarView: View {
                         Text("Inbox")
                     }
                 
-                ProfileView(user: MOCK_DATA_USER)
+                ProfileView(user: user)
                     .tabItem {
                         Image(systemName: "person.crop.circle.fill")
                         Text("Profile")

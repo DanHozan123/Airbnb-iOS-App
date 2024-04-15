@@ -10,13 +10,17 @@ import Foundation
 struct User {
     let id: String
     let image: String
-    let mail: String
-    let fullname: String
+    let email: String
+    let firstName: String
+    let lastName: String
+    let phoneNumber: String?
 }
 
 let MOCK_DATA_USER = User(id: UUID().uuidString,
                           image: "Daniel Day-Lewis",
-                          mail: "daniel@gmail.com",
-                          fullname: "Daniel Day-Lewis")
+                          email: "daniel@gmail.com",
+                          firstName: "Daniel",
+                          lastName: "Day-Lewis",
+                          phoneNumber: "+40751704238")
 
 

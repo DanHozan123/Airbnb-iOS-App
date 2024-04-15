@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ButtonLabelCustom: View {
+struct ButtonLabelWithRectangle: View {
     
     let input: String
     let image: String
@@ -39,8 +39,8 @@ struct ButtonLabelCustom: View {
     }
 }
 
-struct ButtonLabelCustom_Previews: PreviewProvider {
+struct ButtonLabelWithRectangle_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonLabelCustom(input: "Continue with email", image: "email")
+        ButtonLabelWithRectangle(input: "Continue with email", image: "email")
     }
 }
