@@ -313,3 +313,48 @@ enum LegalItems: String {
         }
     }
 }
+
+
+enum EditProfile: String {
+    case university = "Where I went to school"
+    case work = "My work"
+    case location = "Where I live"
+    case languages = "Languages I speak"
+    case age = "Year I was born"
+    case song = "My favorite song in secondary school"
+    case love = "I'm obsessed with"
+    case funFact = "My fun fact"
+    case uselessSkill = "My most useless skill"
+    case biographyTitle = "My biography title would be"
+    case spendTime = "I spend to much  time"
+    case pets = "Pets"
+    
+    var imageName: String {
+        switch self {
+        case .university:
+            return "graduationcap"
+        case .work:
+            return "briefcase"
+        case .location:
+            return "globe.europe.africa"
+        case .languages:
+            return "character.bubble"
+        case .age:
+            return "balloon"
+        case .song:
+            return "music.note"
+        case .love:
+            return "heart"
+        case .funFact:
+            return "lightbulb"
+        case .uselessSkill:
+            return "pencil"
+        case .biographyTitle:
+            return "book"
+        case .spendTime:
+            return "clock"
+        case .pets:
+            return "pawprint"
+        }
+    }
+}
