@@ -301,7 +301,7 @@ struct CreateProfileView: View {
                         
                         // about you
                         VStack(alignment: .leading) {
-                            Text("About you")
+                            Text("About you*")
                                 .font(.system(size: 18))
                                 .fontWeight(.semibold)
                                 .padding(.bottom, 5)

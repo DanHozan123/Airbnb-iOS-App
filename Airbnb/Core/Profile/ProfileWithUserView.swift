@@ -12,7 +12,6 @@ struct ProfileWithUserView: View {
     var user: User
     
     @State private var isAuthentificationSheetPresented = false
-    @State private var isAirbnbYourPlaceSheetPresented = false
     
     var body: some View {
         ScrollView {
@@ -44,13 +43,17 @@ struct ProfileWithUserView: View {
                     Divider()
                         .background(.gray)
                     
-                    Button {
-                        isAirbnbYourPlaceSheetPresented.toggle()
+                
+                    NavigationLink {
+                        AirbnbYourPlaceView()
                     } label: {
                         AirbnbYourPlace()
                     }
                     .padding(.vertical, 30)
                     .tint(.black)
+
+                        
+                 
                 }
                 
                 
@@ -234,9 +237,6 @@ struct ProfileWithUserView: View {
             }
             .sheet(isPresented: $isAuthentificationSheetPresented, content: {
                 AuthentificationView(isShowingAuthentificationView: $isAuthentificationSheetPresented)
-            })
-            .sheet(isPresented: $isAirbnbYourPlaceSheetPresented, content: {
-                AirbnbYourPlaceView()
             })
             .padding()
             .navigationBarTitle("")

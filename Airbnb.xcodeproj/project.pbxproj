@@ -380,7 +380,7 @@
 				0E20FE152BCAA2E600DBAEA2 /* ProfileWithGuestUserView.swift */,
 				0E7BF1472BCD53C0009379B6 /* ShowProfileView.swift */,
 				0E7BF1512BCDB089009379B6 /* CreateProfileView.swift */,
-				0E7BF1492BCD53DC009379B6 /* AirbnbYourPlaceView.swift */,
+				0E7AD9BD2BCFF8E9007D1259 /* AirbnbYourPlaceViews */,
 				0E7BF1142BCD2AD1009379B6 /* ProfileSubviews */,
 			);
 			path = Profile;
@@ -405,6 +405,14 @@
 				0E7800C62BC936DD007130E5 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0E7AD9BD2BCFF8E9007D1259 /* AirbnbYourPlaceViews */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF1492BCD53DC009379B6 /* AirbnbYourPlaceView.swift */,
+			);
+			path = AirbnbYourPlaceViews;
 			sourceTree = "<group>";
 		};
 		0E7BF1142BCD2AD1009379B6 /* ProfileSubviews */ = {
